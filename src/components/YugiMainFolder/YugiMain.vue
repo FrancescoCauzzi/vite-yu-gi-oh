@@ -34,16 +34,13 @@ export default {
   <div class="container-fluid __container-outer py-5">
     <div class="container __cards-container">
       <YugiMainCard
-        v-for="card in store.cards.data"
-        :card="card"
+        v-for="item in store.cards.data"
+        :card="item"
       ></YugiMainCard>
     </div>
   </div>
 </template>
 <style scoped>
-/* .__cards-container {
-
-} */
 .__container-outer {
   background-image: url(/img/bg-custom-img.jpg);
   background-repeat: repeat;
