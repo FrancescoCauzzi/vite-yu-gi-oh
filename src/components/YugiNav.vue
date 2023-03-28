@@ -26,6 +26,6 @@ export default {
 </template>
 <style scoped>
 .__navbar {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid brown;
 }
 </style>

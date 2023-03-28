@@ -31,8 +31,28 @@ export default {
 };
 </script>
 <template>
-  <div class="container __cards-container">
-    <YugiMainCard v-for="card in store.cards.data" :card="card"></YugiMainCard>
+  <div class="container-fluid __container-outer py-5">
+    <div class="container __cards-container">
+      <YugiMainCard
+        v-for="card in store.cards.data"
+        :card="card"
+      ></YugiMainCard>
+    </div>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+/* .__cards-container {
+
+} */
+.__container-outer {
+  background-image: url(/img/bg-custom-img.jpg);
+  background-repeat: repeat;
+}
+
+.__cards-container {
+  display: flex;
+
+  flex-flow: row wrap;
+  gap: 20px;
+}
+</style>
