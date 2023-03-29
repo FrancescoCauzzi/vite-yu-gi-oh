@@ -110,7 +110,7 @@ export default {
       </div>
       <div class="__loader d-flex justify-content-center" v-if="loading">
         <div
-          class="__error-displayer fw-bold w-50 text-white p-3"
+          class="__error-displayer fw-bold text-white p-3"
           v-if="store.errorMessageToVisulize !== ''"
         >
           The server could not find any card with the name:
@@ -163,6 +163,7 @@ export default {
 .__error-displayer {
   text-align-last: center;
   background-color: black;
+  width: 60%;
   height: 14%;
   border: 2px solid white;
   box-shadow: 5px 5px grey;
