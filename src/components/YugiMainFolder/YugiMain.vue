@@ -37,6 +37,7 @@ export default {
           "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0"
         );
         this.store.cards = response.data;
+        console.log(this.store.cards);
       } catch (error) {
         console.log(error);
       }
@@ -65,6 +66,7 @@ export default {
   background-repeat: no-repeat;
   width: 100%;
   height: 1000px;
+  /* position: fixed; */
 }
 .__container-outer {
   background-image: url(/img/bg-custom-img.jpg);

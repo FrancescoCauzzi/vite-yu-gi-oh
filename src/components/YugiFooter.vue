@@ -6,7 +6,7 @@ export default {
 };
 </script>
 <template>
-  <div class="container-flex bg-dark">
+  <div class="container-flex bg-dark __footer">
     <footer
       class="d-flex flex-wrap justify-content-between align-items-center p-3"
     >
@@ -18,4 +18,8 @@ export default {
     </footer>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.__footer {
+  border-top: 2px solid brown;
+}
+</style>
