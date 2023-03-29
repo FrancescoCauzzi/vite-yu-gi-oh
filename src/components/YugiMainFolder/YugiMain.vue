@@ -48,32 +48,34 @@ export default {
       this.loading = false;
     },
     async searchCards() {
-      this.loading = true;
-      // In this example, the searchQuery variable contains the search query "Dark Magician". The encodeURIComponent() function is then used to encode the search query into the encodedQuery variable. The resulting encoded search query is "Dark%20Magician", which can be used in a URL to search for cards with the name "Dark Magician".
-      let apiNewString = this.store.cardName;
-      let encodedQuery = encodeURIComponent(apiNewString);
-      let apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${encodedQuery}`;
-      console.log(encodedQuery);
+      if (this.store.cardName.trim()) {
+        this.loading = true;
+        // In this example, the searchQuery variable contains the search query "Dark Magician". The encodeURIComponent() function is then used to encode the search query into the encodedQuery variable. The resulting encoded search query is "Dark%20Magician", which can be used in a URL to search for cards with the name "Dark Magician".
+        let apiNewString = this.store.cardName;
+        let encodedQuery = encodeURIComponent(apiNewString);
+        let apiUrl = `https://db.ygoprodeck.com/api/v7/cardinfo.php?fname=${encodedQuery}`;
+        console.log(encodedQuery);
 
-      try {
-        this.store.errorMessageToVisulize = "";
-        this.store.cardNameToVisualuize = "";
+        try {
+          this.store.errorMessageToVisulize = "";
+          this.store.cardNameToVisualuize = "";
 
-        let response = await axios.get(apiUrl);
-        this.store.cards = response.data;
-        this.store.cardsLength = this.store.cards.data.length;
-        console.log(this.store.cards);
+          let response = await axios.get(apiUrl);
+          this.store.cards = response.data;
+          this.store.cardsLength = this.store.cards.data.length;
+          console.log(this.store.cards);
 
-        this.loading = false;
-      } catch (error) {
-        console.log(error);
-        this.store.errorMessage = error.message;
-        console.log(this.store.errorMessage);
-        this.store.errorMessageToVisulize = this.store.errorMessage;
-        this.store.cardNameToVisualuize = this.store.cardName;
+          this.loading = false;
+        } catch (error) {
+          console.log(error);
+          this.store.errorMessage = error.message;
+          console.log(this.store.errorMessage);
+          this.store.errorMessageToVisulize = this.store.errorMessage;
+          this.store.cardNameToVisualuize = this.store.cardName;
+        }
+        this.store.errorMessage = "";
+        this.store.cardName = "";
       }
-      this.store.errorMessage = "";
-      this.store.cardName = "";
     },
     // Altro metodo che si occupa di visualizzare le carte
     search() {
