@@ -33,6 +33,10 @@ export default {
   color: white;
 }
 
+.__title {
+  text-align-last: center;
+}
+
 img {
   width: 100%;
 }
