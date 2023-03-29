@@ -122,7 +122,7 @@ export default {
         </div>
       </div>
       <div class="container" v-else>
-        <YugiMainNumberVisual></YugiMainNumberVisual>
+        <YugiMainNumberVisual v-if="store.cardsLength"></YugiMainNumberVisual>
         <div class="__cards-container">
           <YugiMainCard
             v-for="item in store.cards.data"
