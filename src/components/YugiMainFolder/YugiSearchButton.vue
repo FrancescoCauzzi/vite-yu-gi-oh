@@ -32,7 +32,7 @@ export default {
         type="text"
         class="form-control w-50"
         v-model="store.cardName"
-        placeholder="Scrcivi il nome della carta che cerchi"
+        placeholder="Type in the name of the card you're searching"
         @keyup.enter="$emit('searchCard')"
       />
       <button
